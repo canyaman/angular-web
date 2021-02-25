@@ -12,7 +12,7 @@ RUN mkdir -p /var/run/nginx /var/log/nginx /var/cache/nginx && \
     chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
 
 COPY ${NGINX_CONF_FILE} /etc/nginx/nginx.conf
-RUN sed -i.bak 's/listen\(.*\)80;/listen 8080;/' /etc/nginx/conf.d/default.conf
+RUN sed -i.bak 's/listen\(.*\)80;/listen 8080;/' /etc/nginx/nginx.conf
 EXPOSE 8080
 
 COPY ${APPLICATION_PATH} /usr/share/nginx/html
